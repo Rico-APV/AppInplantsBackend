@@ -1,0 +1,29 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Entered the install phase...
+      - pnpm install 
+    finally:
+      - echo Finished install phase...
+  build:
+    commands:
+      - echo Entered the build phase...
+      - pnpm run build
+    finally:
+      - echo Finished build phase...
+  post_build:
+    commands:
+      - echo Creating build artifact...
+      - pnpm run start:prod
+
+artifacts:
+  base-directory: build
+  files:
+    - "**/*"
+
+cache:
+  paths:
+    - "/ram-back/node_modules/**/*"
+    - "/ram-front/node_modules/**/*"
