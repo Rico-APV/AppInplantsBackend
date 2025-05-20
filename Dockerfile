@@ -5,6 +5,6 @@ RUN npm install -g pnpm
 RUN npm install -g typescript
 
 RUN npm install -g @nestjs/cli
-RUN npm install && pnpm run build
+RUN npm install && npm run build
 
 CMD [ "npm", "run", "start:prod" ]
