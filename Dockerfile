@@ -1,10 +1,13 @@
-FROM node:21.6.2
+FROM node:18
 RUN apt-get update && apt-get install
 
-RUN npm install -g npm@latest
-RUN npm install -g typescript
+RUN npm cache clean --force && \
+    rm -rf node_modules package-lock.json && \
+    npm install
+    
+WORKDIR /app
+COPY package*.json ./
 
-RUN npm install -g @nestjs/cli
 RUN npm install
 RUN npm run build
 
