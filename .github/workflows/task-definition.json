@@ -90,6 +90,5 @@
     },
     "registeredAt": "2025-05-27T17:16:37.652Z",
     "registeredBy": "arn:aws:iam::285806911028:user/AngelRico",
-    "enableFaultInjection": false,
     "tags": []
 }
