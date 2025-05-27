@@ -1,13 +1,13 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-2:285806911028:task-definition/app-inplants-task:1",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-2:285806911028:task-definition/app-inplants-task-back:1",
     "containerDefinitions": [
         {
-            "name": "inplantsapp",
+            "name": "inplants",
             "image": "285806911028.dkr.ecr.us-east-2.amazonaws.com/apv/inplants-app",
             "cpu": 0,
             "portMappings": [
                 {
-                    "name": "80",
+                    "name": "inplants-80-tcp",
                     "containerPort": 80,
                     "hostPort": 80,
                     "protocol": "tcp",
@@ -23,7 +23,7 @@
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
-                    "awslogs-group": "/ecs/app-inplants-task",
+                    "awslogs-group": "/ecs/app-inplants-task-back",
                     "mode": "non-blocking",
                     "awslogs-create-group": "true",
                     "max-buffer-size": "25m",
@@ -35,7 +35,7 @@
             "systemControls": []
         }
     ],
-    "family": "app-inplants-task",
+    "family": "app-inplants-task-back",
     "taskRoleArn": "arn:aws:iam::285806911028:role/ecsTaskExecutionRole",
     "executionRoleArn": "arn:aws:iam::285806911028:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
@@ -82,13 +82,13 @@
     "requiresCompatibilities": [
         "FARGATE"
     ],
-    "cpu": "512",
-    "memory": "1024",
+    "cpu": "2048",
+    "memory": "8192",
     "runtimePlatform": {
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2025-05-27T17:16:37.652Z",
+    "registeredAt": "2025-05-27T18:04:12.799Z",
     "registeredBy": "arn:aws:iam::285806911028:user/AngelRico",
     "tags": []
 }
